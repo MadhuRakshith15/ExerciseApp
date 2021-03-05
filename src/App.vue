@@ -5,6 +5,7 @@
       <div class="container">
         <a class="navbar-brand float-left" href="#" target="_blank">
            Fitness Freak
+        </a>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
