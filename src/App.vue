@@ -9,12 +9,12 @@
            Fitness Freak
         </a>
         <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link pr-3" to="/workouts">Workouts</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-5" to="/exercise">Exercises</router-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
           </li>
