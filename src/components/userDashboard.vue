@@ -1,35 +1,26 @@
 <template>
-      <div>
-    <b-container>
-      <b-row>
-        <b-col>
-          <h2 class="view-header">Admin</h2>
-          <b-tabs content-class="mt-3">
-            <b-tab title="Exercises" active>
-              <Exercises v-on:update-output="updateOutput" />
-            </b-tab>
-            <b-tab title="Workouts">
-              <Workouts v-on:update-output="updateOutput" />
-            </b-tab>
-            <b-tab title="Levels">
-              <WorkoutLevels v-on:update-output="updateOutput" />
-            </b-tab>
-            <b-tab title="Goals">
-              <WorkoutGoals v-on:update-output="updateOutput" />
-            </b-tab>
-            <b-tab title="Output">
-              <h3>Output</h3>
-              <b-form-textarea
-                id="output"
-                name="output"
-                :value="JSON.stringify(data)"
-                rows="3"
-                max-rows="6"
-              ></b-form-textarea>
-            </b-tab>
-          </b-tabs>
-        </b-col>
-      </b-row>
-    </b-container>
-  </div>
+     <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
+      <div class="container">
+        <a class="navbar-brand float-left" href="https://myappr.herokuapp.com/" target="_blank">
+           Fitness Freak
+        </a>
+        <ul class="nav navbar-nav flex-row float-right">
+          <li class="nav-item">
+            <router-link class="nav-link pr-4" to="/user-dashboard">Dashboard</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-4" to="/exercise">Exercises</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-4" to="/friends">Friends</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link mr-4" to="/user-profile">Profile</router-link>
+          </li>
+          <li class="nav-item" style="">
+            <button class="btn btn-outline-danger">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 </template>
