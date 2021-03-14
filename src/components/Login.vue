@@ -6,21 +6,21 @@
            Fitness Freak
         </a>
         <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link pr-3" to="/workouts">Workouts</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-5" to="/exercise">Exercises</router-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
           </li>
           <li class="nav-item">
             <router-link class="btn btn-outline-primary mr-3" to="/signup">Sign up</router-link>
           </li>
-          <li class="nav-item" style="">
+          <!-- <li class="nav-item" style="">
             <router-link class="btn btn-outline-info" to="/admin-login">Admin Login</router-link>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
