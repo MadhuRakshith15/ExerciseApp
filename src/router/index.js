@@ -33,14 +33,13 @@ Vue.use(VueRouter)
     path: '/user-dashboard',
     name: 'user-dashboard',
     component: () => import('../components/userDashboard.vue')
+    //almost contains home values
   },
-
-  {
-    path: '/user-dashboard',
-    name: 'user-dashboard',
-    component: () => import('../components/userDashboard.vue')
-  },
-
+  // {
+  //   path: '/friends',
+  //   name: 'friends',
+  //   component: () => import('../components/Friends.vue')
+  // },
   {
     path: '/workouts',
     name: 'workouts',
@@ -49,14 +48,14 @@ Vue.use(VueRouter)
       title: 'Workouts',
     },
   },
-    {
-    path: '/user-profile',
-    name: 'user-profile',
-    component: () => import('../components/UserProfile.vue'),
-    meta: {
-      title: 'User-Profile',
-    },
-  }
+  //   {
+  //   path: '/user-profile',
+  //   name: 'user-profile',
+  //   component: () => import('../components/UserProfile.vue'),
+  //   meta: {
+  //     title: 'User-Profile',
+  //   },
+  // }
 ]
 
 const router = new VueRouter({
