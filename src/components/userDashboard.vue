@@ -18,7 +18,7 @@
             <router-link class="nav-link mr-4" to="/user-profile">Profile</router-link>
           </li>
           <li class="nav-item" style="">
-            <button class="btn btn-outline-danger">Logout</button>
+            <button class="btn btn-outline-info">Logout</button>
           </li>
         </ul>
       </div>
