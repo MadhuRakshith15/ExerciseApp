@@ -11,7 +11,10 @@
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/">Sign up</router-link>
+            <router-link class="btn btn-outline-primary mr-3" to="/">Sign up</router-link>
+          </li>
+          <li class="nav-item" style="">
+            <router-link class="btn btn-outline-info" to="/admin-login">Admin Login</router-link>
           </li>
         </ul>
       </div>
@@ -20,9 +23,9 @@
     <!-- Main -->
     <div class="App">
       <div class="vertical-center">
-        <div class="inner-block">
+        <!-- <div class="inner-block"> -->
           <router-view />
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>

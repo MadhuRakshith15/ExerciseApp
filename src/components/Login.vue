@@ -1,5 +1,7 @@
 <template>
-    <div class="vue-tempalte">
+    <div class="vue-template">
+       <div class="vertical-center">
+        <div class="inner-block">
         <form>
             <h3>Sign In</h3>
 
@@ -19,15 +21,9 @@
                 <router-link to="/forgot-password">Forgot password ?</router-link>
             </p>
 
-            <!-- <div class="social-icons">
-                <ul>
-                    <li><a href="#"><i class="fa fa-google"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div> -->
-
         </form>
+        </div>
+        </div>
     </div>
 </template>
 
