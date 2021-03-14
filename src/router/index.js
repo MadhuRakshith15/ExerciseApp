@@ -4,11 +4,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
   const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: () => import('../components/Signup.vue')
-  // },
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('../App.vue')
+  },
   {
     path: '/signup',
     name: 'signup',
@@ -42,14 +42,14 @@ Vue.use(VueRouter)
   //     title: 'Exercises',
   //   },
   // },
-  // {
-  //   path: '/workouts',
-  //   name: 'workouts',
-  //   component: () => import('../components/AdminLogin.vue'),
-  //   meta: {
-  //     title: 'Workouts',
-  //   },
-  // },
+  {
+    path: '/workouts',
+    name: 'workouts',
+    component: () => import('../components/WorkoutCard.vue'),
+    meta: {
+      title: 'Workouts',
+    },
+  },
   // {
   //   path: '/start/:workout_id',
   //   name: 'start',
@@ -58,6 +58,14 @@ Vue.use(VueRouter)
   //     title: 'Start',
   //   },
   // }
+    {
+    path: '/user-profile',
+    name: 'user-profile',
+    component: () => import('../components/UserProfile.vue'),
+    meta: {
+      title: 'User-Profile',
+    },
+  }
 ]
 
 const router = new VueRouter({
