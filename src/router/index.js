@@ -4,11 +4,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: () => import('../components/Signup.vue')
-  },
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: () => import('../components/Signup.vue')
+  // },
   {
     path: '/signup',
     name: 'signup',
@@ -28,7 +28,36 @@ Vue.use(VueRouter)
     path: '/admin-login',
     name: 'admin-login',
     component: () => import('../components/AdminLogin.vue')
-  }
+  },
+  {
+    path: '/user-dashboard',
+    name: 'user-dashboard',
+    component: () => import('../components/userDashboard.vue')
+  },
+  // {
+  //   path: '/exercises',
+  //   name: 'exercises',
+  //   component: () => import('../components/AdminLogin.vue'),
+  //   meta: {
+  //     title: 'Exercises',
+  //   },
+  // },
+  // {
+  //   path: '/workouts',
+  //   name: 'workouts',
+  //   component: () => import('../components/AdminLogin.vue'),
+  //   meta: {
+  //     title: 'Workouts',
+  //   },
+  // },
+  // {
+  //   path: '/start/:workout_id',
+  //   name: 'start',
+  //   component: () => import('../components/AdminLogin.vue'),
+  //   meta: {
+  //     title: 'Start',
+  //   },
+  // }
 ]
 
 const router = new VueRouter({
