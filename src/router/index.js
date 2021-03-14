@@ -34,14 +34,13 @@ Vue.use(VueRouter)
     name: 'user-dashboard',
     component: () => import('../components/userDashboard.vue')
   },
-  // {
-  //   path: '/exercises',
-  //   name: 'exercises',
-  //   component: () => import('../components/AdminLogin.vue'),
-  //   meta: {
-  //     title: 'Exercises',
-  //   },
-  // },
+
+  {
+    path: '/user-dashboard',
+    name: 'user-dashboard',
+    component: () => import('../components/userDashboard.vue')
+  },
+
   {
     path: '/workouts',
     name: 'workouts',
@@ -50,14 +49,6 @@ Vue.use(VueRouter)
       title: 'Workouts',
     },
   },
-  // {
-  //   path: '/start/:workout_id',
-  //   name: 'start',
-  //   component: () => import('../components/AdminLogin.vue'),
-  //   meta: {
-  //     title: 'Start',
-  //   },
-  // }
     {
     path: '/user-profile',
     name: 'user-profile',
