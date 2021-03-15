@@ -25,7 +25,7 @@
       </div>
     </nav>
         <div class="inner-block">
-            <div class="vertical-center pt-5">
+            <div class="vertical-center">
         <form>
             <h3 class="pt-5">Sign Up</h3>
 
@@ -50,12 +50,12 @@
             </div>
 
             <div class="form-group">
-                <label>Weight</label>
+                <label>Weight(lbs)</label>
                 <input type="number" class="form-control form-control-lg" />
             </div>
 
             <div class="form-group">
-                <label>Height</label>
+                <label>Height"</label>
                 <input type="number" class="form-control form-control-lg" />
             </div>
 
