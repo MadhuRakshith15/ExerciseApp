@@ -26,7 +26,7 @@
     </nav>
         <div class="inner-block">
             <div class="vertical-center">
-        <form>
+        <form id="signup-form">
             <h3 class="pt-5">Sign Up</h3>
 
             <div class="form-group">
@@ -101,7 +101,7 @@
              </p>
            </div>
 
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block" v-on:click="registerClicked;">Sign Up</button>
 
             <p class="forgot-password text-right">
                 Already registered 
@@ -142,6 +142,7 @@ export default {
     };
   },
   methods: {
+
     validateFields() {
       // username
       if (this.user.username.length === 0) {
@@ -173,8 +174,13 @@ export default {
       }
       return true;
     },
+
+    
+
     //registers a new user
     registerClicked() {
+        console.log("check");
+        console.log(JSON.parse(sessionStorage.getItem("users")));
       //  if fields are valid
       if (this.validateFields()) {
         //  get users in the session
@@ -188,6 +194,7 @@ export default {
         this.clearForm();
         router.push("/");
       }
+      console.log(JSON.parse(sessionStorage.getItem("user")));
     },
     clearForm() {
       this.picture = null;

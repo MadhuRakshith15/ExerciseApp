@@ -56,8 +56,11 @@
                 {{ error }}
                 </p>
              </div>
-            <button type="submit" class="btn btn-success btn-lg btn-block" @click="loginBtnClicked()">Sign In</button>
-
+             <router-link to="/user-dashboard">
+            <button type="submit" class="btn btn-success btn-lg btn-block" v-on:click="loginBtnClicked()">
+                login
+            </button>
+            </router-link>
             <!-- <p class="forgot-password text-right mt-2 mb-4">
                 <router-link to="/forgot-password">Forgot password ?</router-link>
             </p> -->
