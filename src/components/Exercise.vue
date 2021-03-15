@@ -106,7 +106,7 @@
 </div>
 <br />
 <div class="outer-block">
-  <h3>Completed workouts list!!</h3>
+  <h3>Facing some errors to display the fields but values are getting stored..</h3>
 <table class="table table-info table-striped table-light">
   <thead>
     <tr>
