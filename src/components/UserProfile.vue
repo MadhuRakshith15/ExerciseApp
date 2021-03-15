@@ -31,6 +31,6 @@
     <br />
     <br />
     <br />
-    <h1>This a profile Page</h1>
+    <h1>This a profile Page needs to be updated</h1>
    </div> 
 </template>
