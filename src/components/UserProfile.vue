@@ -1,4 +1,5 @@
 <template>
+    <div>
      <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
       <div class="container">
         <a class="navbar-brand float-left" href="https://myappr.herokuapp.com/" target="_blank">
@@ -26,4 +27,10 @@
         </ul>
       </div>
     </nav>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1>This a profile Page</h1>
+   </div> 
 </template>

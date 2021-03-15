@@ -224,3 +224,175 @@ label {
   left: 35%;
   bottom: 70%;
 }
+
+
+
+/* ======= */
+
+
+
+/* Basic portlet */
+.portlet {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  padding: 0px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.portlet > .portlet-title {
+  border-bottom: 1px solid #eee;
+  padding: 0;
+  margin-bottom: 10px;
+  min-height: 41px;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.portlet > .portlet-title:before, .portlet > .portlet-title:after {
+  content: " ";
+  display: table;
+}
+.portlet > .portlet-title:after {
+  clear: both;
+}
+.portlet > .portlet-title > .caption {
+  float: left;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 0;
+}
+.portlet > .portlet-title > .caption.bold {
+  font-weight: 400;
+}
+.portlet > .portlet-title > .caption > i {
+  float: left;
+  margin-top: 4px;
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 5px;
+  color: #666;
+}
+.portlet > .portlet-title > .caption > i.glyphicon {
+  margin-top: 2px;
+}
+.portlet > .portlet-body {
+  clear: both;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+.portlet > .portlet-empty {
+  min-height: 125px;
+}
+.portlet.full-height-content {
+  margin-bottom: 0;
+}
+
+/* Portlet background colors */
+/* Side bordered portlet */
+.portlet.bordered {
+  border-left: 2px solid #e6e9ec !important;
+}
+.portlet.bordered > .portlet-title {
+  border-bottom: 0;
+}
+
+/* Solid colored portlet */
+.portlet.solid {
+  padding: 0 10px 10px 10px;
+  border: 0px;
+}
+.portlet.solid > .portlet-title {
+  border-bottom: 0;
+  margin-bottom: 10px;
+}
+.portlet.solid > .portlet-title > .caption {
+  padding: 16px 0 2px 0;
+}
+.portlet.solid > .portlet-title > .actions {
+  padding: 12px 0 6px 0;
+}
+.portlet.solid > .portlet-title > .tools {
+  padding: 14px 0 6px 0;
+}
+
+/* Solid bordered portlet */
+.portlet.solid.bordered > .portlet-title {
+  margin-bottom: 10px;
+}
+
+/* Box portlet */
+.portlet.box {
+  padding: 0px !important;
+}
+.portlet.box > .portlet-title {
+  border-bottom: 0;
+  padding: 0 10px;
+  margin-bottom: 0;
+  color: #fff;
+}
+.portlet.box > .portlet-title > .caption {
+  padding: 11px 0 9px 0;
+}
+.portlet.box > .portlet-title > .tools > a.fullscreen {
+  color: #fdfdfd;
+}
+.portlet.box > .portlet-body {
+  background-color: #fff;
+  padding: 10px;
+}
+/* Portlet */
+.portlet > .portlet-body.blue,
+.portlet.blue {
+  background-color: #3598dc;
+}
+
+.portlet.solid.blue > .portlet-title,
+.portlet.solid.blue > .portlet-body {
+  border: 0;
+  color: #FFFFFF;
+}
+.portlet.solid.blue > .portlet-title > .caption {
+  font-weight: 400;
+}
+.portlet.solid.blue > .portlet-title > .caption > i {
+  color: #FFFFFF;
+}
+.portlet.solid.blue > .portlet-title > .tools > a.fullscreen {
+  color: #fdfdfd;
+}
+
+.portlet.box.blue {
+  border: 1px solid #60aee4;
+  border-top: 0;
+}
+.portlet.box.blue > .portlet-title {
+  background-color: #3598dc;
+}
+.portlet.box.blue > .portlet-title > .caption {
+  color: #FFFFFF;
+}
+.portlet.box.blue > .portlet-title > .caption > i {
+  color: #FFFFFF;
+}
+.portlet.box.blue > .portlet-title > .actions .btn-default {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid #95c9ed;
+  color: #aad4f0;
+}
+.portlet.box.blue > .portlet-title > .actions .btn-default > i {
+  color: #b7daf3;
+}
+.portlet.box.blue > .portlet-title > .actions .btn-default:hover, .portlet.box.blue > .portlet-title > .actions .btn-default:focus, .portlet.box.blue > .portlet-title > .actions .btn-default:active, .portlet.box.blue > .portlet-title > .actions .btn-default.active {
+  border: 1px solid #c0dff4;
+  color: #d6eaf8;
+}
