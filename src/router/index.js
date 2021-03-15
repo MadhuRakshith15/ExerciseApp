@@ -48,14 +48,14 @@ Vue.use(VueRouter)
       title: 'Workouts',
     },
   },
-  //   {
-  //   path: '/user-profile',
-  //   name: 'user-profile',
-  //   component: () => import('../components/UserProfile.vue'),
-  //   meta: {
-  //     title: 'User-Profile',
-  //   },
-  // }
+    {
+    path: '/user-profile',
+    name: 'user-profile',
+    component: () => import('../components/UserProfile.vue'),
+    meta: {
+      title: 'User-Profile',
+    },
+  }
 ]
 
 const router = new VueRouter({
