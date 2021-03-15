@@ -48,6 +48,14 @@ Vue.use(VueRouter)
       title: 'Workouts',
     },
   },
+  {
+    path: '/exercise',
+    name: 'workouts',
+    component: () => import('../components/Exercise.vue'),
+    meta: {
+      title: 'Exercise',
+    },
+  },
     {
     path: '/user-profile',
     name: 'user-profile',
