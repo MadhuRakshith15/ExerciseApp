@@ -196,7 +196,7 @@ export default {
         sessionStorage.setItem("user", JSON.stringify(this.user));
         sessionStorage.setItem("isLoggedIn", true);
         this.clearForm();
-        router.push("/");
+        router.push("/user-dashboard");
       }
       console.log(JSON.parse(sessionStorage.getItem("user")));
     },
