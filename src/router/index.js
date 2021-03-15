@@ -35,11 +35,11 @@ Vue.use(VueRouter)
     component: () => import('../components/userDashboard.vue')
     //almost contains home values
   },
-  // {
-  //   path: '/friends',
-  //   name: 'friends',
-  //   component: () => import('../components/Friends.vue')
-  // },
+  {
+    path: '/friends',
+    name: 'friends',
+    component: () => import('../components/Friends.vue')
+  },
   {
     path: '/workouts',
     name: 'workouts',
