@@ -9,6 +9,9 @@
             <router-link class="nav-link pr-4" to="/user-dashboard">Dashboard</router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link pr-4" to="/workouts">Workouts</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link pr-4" to="/exercise">Exercises</router-link>
           </li>
           <li class="nav-item">
