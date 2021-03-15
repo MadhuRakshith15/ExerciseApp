@@ -41,6 +41,11 @@ Vue.use(VueRouter)
     component: () => import('../components/Friends.vue')
   },
   {
+    path: '/admin-page',
+    name: 'friends',
+    component: () => import('../components/AdminPage.vue')
+  },
+  {
     path: '/workouts',
     name: 'workouts',
     component: () => import('../components/WorkoutCard.vue'),
