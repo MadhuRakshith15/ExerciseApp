@@ -29,9 +29,9 @@
     </nav>
 
       <!-- <div class="vertical-center"> -->
-
+        <div class="bg-Img">
           <router-view />
-  
+        </div>
       <!-- </div> -->
 
     </div>

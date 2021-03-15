@@ -56,11 +56,13 @@
                 {{ error }}
                 </p>
              </div>
-             <router-link to="/user-dashboard">
-            <button type="submit" class="btn btn-success btn-lg btn-block" v-on:click="loginBtnClicked()">
+            
+            <a @click="loginBtnClicked()()">
+            <button type="submit" class="btn btn-success btn-lg btn-block">
                 login
             </button>
-            </router-link>
+            </a>
+           
             <!-- <p class="forgot-password text-right mt-2 mb-4">
                 <router-link to="/forgot-password">Forgot password ?</router-link>
             </p> -->
@@ -86,7 +88,7 @@ export default {
   },
   mounted() {
     if (sessionStorage.isLoggedIn) {
-      this.$router.push("/");
+      this.$router.push("/user-dashboard");
     }
   },
   methods: {

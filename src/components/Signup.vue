@@ -101,7 +101,11 @@
              </p>
            </div>
 
-            <button type="submit" class="btn btn-dark btn-lg btn-block" v-on:click="registerClicked;">Sign Up</button>
+            <a @click="registerClicked()">
+            <button type="submit" class="btn btn-dark btn-lg btn-block">
+                Sign Up
+                </button>
+                </a>
 
             <p class="forgot-password text-right">
                 Already registered 
