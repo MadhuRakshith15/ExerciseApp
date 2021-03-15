@@ -28,11 +28,11 @@
       </div>
     </nav>
 
-      <div class="vertical-center">
+      <!-- <div class="vertical-center"> -->
 
           <router-view />
   
-      </div>
+      <!-- </div> -->
 
     </div>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="vue-template">
-        <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
+    <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
       <div class="container">
         <a class="navbar-brand float-left" href="https://myappr.herokuapp.com/" target="_blank">
            Fitness Freak
@@ -24,6 +24,7 @@
         </ul>
       </div>
     </nav>
+    
        <div class="vertical-center">
         <div class="inner-block">
         <form>
