@@ -32,7 +32,8 @@ Vue.use(VueRouter)
   {
     path: '/user-dashboard',
     name: 'user-dashboard',
-    component: () => import('../components/userDashboard.vue')
+    // component: () => import('../components/userDashboard.vue')
+    component: () => import('../components/UserProfile.vue')
     //almost contains home values
   },
   {
