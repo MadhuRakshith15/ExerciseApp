@@ -25,8 +25,8 @@
       </div>
     </nav>
     
-       <div class="vertical-center">
-        <div class="inner-block">
+       <div class="vertical-center mt-5">
+        <div class="inner-block mt-5">
         <form>
             <h3>Sign In</h3>
 
