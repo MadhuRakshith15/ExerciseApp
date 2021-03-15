@@ -102,7 +102,7 @@
            </div>
 
             <a @click="registerClicked()">
-            <button type="submit" class="btn btn-success btn-lg btn-block">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
                 Signup
             </button>
                 </a>
