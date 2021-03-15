@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <button type="" class="profile-edit-btn" name="btnAddMore" value="">Edit Profile</button>
                     </div>
                 </div>
                 <div class="row">
@@ -81,15 +81,15 @@
                                                 <label>User Id/Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Rakshith@gmail.com</p>
+                                                <p>{{ getCurrentUser.username }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label>Full Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Madhu Rakshith</p>
+                                                <p>{{ getCurrentUser.fullname }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -97,7 +97,7 @@
                                                 <label>Height"</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>6</p>
+                                                <p>{{ getCurrentUser.height || ""}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -105,7 +105,7 @@
                                                 <label>Weight(lbs)</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>150</p>
+                                                <p>{{ getCurrentUser.weight || ""}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -113,7 +113,7 @@
                                                 <label>Age</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>26</p>
+                                                <p>{{ getCurrentUser.age || ""}}</p>
                                             </div>
                                         </div>
                             </div>
@@ -175,3 +175,25 @@
 
    </div> 
 </template>
+
+
+<script>
+
+export default {
+  name: "v$ettings",
+  computed: {
+    getCurrentUser: function() {
+      return JSON.parse(sessionStorage.getItem("user"));
+    },
+    getCurrentUserFullName() {
+      return this.getCurrentUser.firstname + " " + this.getCurrentUser.lastname;
+    },
+  },
+  mounted() {
+    if (!sessionStorage.isLoggedIn) {
+      this.$router.push("/login");
+    }
+  },
+};
+
+</script>
