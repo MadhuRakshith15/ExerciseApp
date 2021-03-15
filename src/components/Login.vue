@@ -32,15 +32,31 @@
 
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" class="form-control form-control-lg" />
+                <input
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Your username"
+                v-model.trim="credentials.username"
+                required
+                />
             </div>
 
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control form-control-lg" />
+                <input
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Your password"
+                v-model.trim="credentials.password"
+                required
+              />
             </div>
-
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
+            <div class="form-group">
+                <p class="help is-danger">
+                {{ error }}
+                </p>
+             </div>
+            <button type="submit" class="btn btn-success btn-lg btn-block" @click="loginBtnClicked()">Sign In</button>
 
             <!-- <p class="forgot-password text-right mt-2 mb-4">
                 <router-link to="/forgot-password">Forgot password ?</router-link>
@@ -53,9 +69,63 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {}
-        }
+import router from "../router/index.js";
+export default {
+  name: "SignIn",
+  data() {
+    return {
+      credentials: {
+        username: "",
+        password: "",
+      },
+      error: "",
+    };
+  },
+  mounted() {
+    if (sessionStorage.isLoggedIn) {
+      this.$router.push("/");
     }
+  },
+  methods: {
+    validateFields() {
+      // email
+      if (this.credentials.username.length === 0) {
+        this.error = "Username is required";
+        return false;
+      }
+      // password
+      if (this.credentials.password.length === 0) {
+        this.error = "Password is required";
+        return false;
+      }
+      return true;
+    },
+    loginBtnClicked() {
+      if (this.validateFields()) {
+        let users = JSON.parse(sessionStorage.getItem("users"));
+        const user = users.find((x) => x.username == this.credentials.username);
+        if (user != undefined && user != "") {
+          if (user.password == this.credentials.password) {
+            sessionStorage.setItem("user", JSON.stringify(user));
+            sessionStorage.setItem("isLoggedIn", true);
+            this.wrongCredentials = true;
+            this.resetForm();
+            router.push("/user-dashboard");
+          }
+        }
+        this.resetForm();
+      }
+    },
+    resetForm() {
+      this.credentials.username = null;
+      this.credentials.password = null;
+    },
+  },
+};
 </script>
+<style>
+.w-100,
+.field {
+  width: 100%;
+}
+</style>
