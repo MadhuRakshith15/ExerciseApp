@@ -1,7 +1,7 @@
 <template>
     <div class="vue-template">
-       <div class="vertical-center">
-        <div class="inner-block">
+       <div class="vertical-center mt-5">
+        <div class="inner-block mt-5">
         <form>
             <h3>Admin's Only</h3>
 
