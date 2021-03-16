@@ -56,7 +56,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/exercise',
-    name: 'workouts',
+    name: 'exercise',
     component: () => import('../components/Exercise.vue'),
     meta: {
       title: 'Exercise',

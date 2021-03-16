@@ -57,7 +57,7 @@
                 </p>
              </div>
             
-            <a @click="loginBtnClicked()()">
+            <a @click="loginBtnClicked()">
             <button type="submit" class="btn btn-primary btn-lg btn-block">
                 login
             </button>

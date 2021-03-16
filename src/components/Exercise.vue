@@ -204,8 +204,6 @@ export default {
     },
   },
 
-
-
   computed: {
     getallexcerises: function() {
       console.log(sessionStorage.getItem("exercises"));
@@ -213,10 +211,6 @@ export default {
     }
   },
 
-  
 
-  mounted() {
-
-  },
 };
 </script>
