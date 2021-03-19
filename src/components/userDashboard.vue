@@ -29,7 +29,8 @@
     </nav>
   <div>
 
-  </div>    
+  </div>  
+  <h1>Will catch up soon!!!</h1>  
 </div>
 
 </template>
