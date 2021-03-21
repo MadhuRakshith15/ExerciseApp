@@ -13,6 +13,9 @@
             <router-link class="nav-link pr-5" to="/exercise">Exercises</router-link>
           </li> -->
           <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/posts">Posts</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
           </li>
           <li class="nav-item">
