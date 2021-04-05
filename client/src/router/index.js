@@ -10,10 +10,16 @@ Vue.use(VueRouter)
     component: () => import('../App.vue')
   },
   {
+    path: '/posts',
+    name: 'posts',
+    component: () => import('../components/Posts.vue')
+  },
+  {
     path: '/signup',
     name: 'signup',
     component: () => import('../components/Signup.vue')
   },
+ 
   {
     path: '/login',
     name: 'login',
@@ -56,7 +62,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/exercise',
-    name: 'exercise',
+    name: 'exercise ',
     component: () => import('../components/Exercise.vue'),
     meta: {
       title: 'Exercise',
