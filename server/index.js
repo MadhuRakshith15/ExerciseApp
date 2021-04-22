@@ -48,12 +48,11 @@ app.use("/api/follow", passportJWT.authenticate(), followRoutes);
 
 app.use(errorHandler);
 
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
 app.get('*', (req, res) => {
     res.sendFile( path.join(__dirname, '../docs/index.html' ) );
 })
 
-.use((error, req, res, next)=>{
+app.use((error, req, res, next)=>{
   console.error(error);
 
     res.status(error.code || 500 );
