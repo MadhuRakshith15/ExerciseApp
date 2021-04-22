@@ -4,7 +4,7 @@
   "description": "Expense Manager APIs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.js"
+    "dev": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
