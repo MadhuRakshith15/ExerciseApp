@@ -75,28 +75,3 @@
 </div>    
 </template>
 
-
-<script>
-
-export default {
-	name: 'Userinfo',
-	created() {
-	},
-	data() {
-		return {
-			error: '',
-			friends: [{name: "Madhu", mail: "Madhu@gmail.com", available: true},
-						{name: "Rakshith", mail: "Rakshith@gmail.com", available: true},
-                        {name: "Venkat koti", mail: "Venkat@gmail.com", available: true},
-                        {name: "Madhulika", mail: "Madhulika@gmail.com", available: true} 
-                        ],
-			users: [{email: "Madhu@gmail.com"},
-					{email: "Rakshith@gmail.com"}]
-		}
-	},
-	mounted() {
-		this.getFriends();
-	}
-}
-
-</script>

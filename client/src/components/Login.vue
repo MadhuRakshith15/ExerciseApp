@@ -76,61 +76,6 @@
     </div>
 </template>
 
-<script>
-import router from "../router/index.js";
-export default {
-  name: "SignIn",
-  data() {
-    return {
-      credentials: {
-        username: "",
-        password: "",
-      },
-      error: "",
-    };
-  },
-  mounted() {
-    if (sessionStorage.isLoggedIn) {
-      this.$router.push("/user-dashboard");
-    }
-  },
-  methods: {
-    validateFields() {
-      // email
-      if (this.credentials.username.length === 0) {
-        this.error = "Username is required";
-        return false;
-      }
-      // password
-      if (this.credentials.password.length === 0) {
-        this.error = "Password is required";
-        return false;
-      }
-      return true;
-    },
-    loginBtnClicked() {
-      if (this.validateFields()) {
-        let users = JSON.parse(sessionStorage.getItem("users"));
-        const user = users.find((x) => x.username == this.credentials.username);
-        if (user != undefined && user != "") {
-          if (user.password == this.credentials.password) {
-            sessionStorage.setItem("user", JSON.stringify(user));
-            sessionStorage.setItem("isLoggedIn", true);
-            this.wrongCredentials = true;
-            this.resetForm();
-            router.push("/user-dashboard");
-          }
-        }
-        this.resetForm();
-      }
-    },
-    resetForm() {
-      this.credentials.username = null;
-      this.credentials.password = null;
-    },
-  },
-};
-</script>
 <style>
 .w-100,
 .field {

@@ -176,24 +176,3 @@
    </div> 
 </template>
 
-
-<script>
-
-export default {
-  name: "v$ettings",
-  computed: {
-    getCurrentUser: function() {
-      return JSON.parse(sessionStorage.getItem("user"));
-    },
-    getCurrentUserFullName() {
-      return this.getCurrentUser.firstname + " " + this.getCurrentUser.lastname;
-    },
-  },
-  mounted() {
-    if (!sessionStorage.isLoggedIn) {
-      this.$router.push("/login");
-    }
-  },
-};
-
-</script>
