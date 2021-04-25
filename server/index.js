@@ -32,7 +32,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/rest-apis", { useNewUrlParser: true });
+mongoose.connect("mongodb://3.16.96.47:27017/rest-apis", { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
