@@ -33,9 +33,7 @@ app.use(limiter);
 
 mongoose.Promise = global.Promise;
 // mongodb://mongoAdmin:changeMe@3.16.96.47:27017/rest-apis?authSource=admin
-mongoose.connect("mongodb://mongoAdmin:changeMe@3.16.96.47:27017/rest-api", { useNewUrlParser: true });
-
-// mongoose.connect("mongodb://mongoAdmin:changeMe@3.16.96.47:27017/rest-apis?authSource=admin", { useNewUrlParser: true });
+mongoose.connect("mongodb://3.16.96.47:27017/rest-apis", { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
