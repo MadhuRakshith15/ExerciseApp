@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 const passportJWT = require("./middlewares/passportJWT")();
 const errorHandler = require("./middlewares/errorHandler");
 const postRoutes = require("./routes/post");
-// const expenseRoutes = require("./routes/expense");
+const userExercisesRoutes = require("./routes/userExercise");
+const userWorkoutsRoutes = require("./routes/userWorkouts");
 const authRoutes = require("./routes/auth");
 const workoutsRoutes = require("./routes/workout");
 const friendsRoutes = require("./routes/friendsRoute");
@@ -32,8 +33,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 mongoose.Promise = global.Promise;
-// mongodb://mongoAdmin:changeMe@3.16.96.47:27017/rest-apis?authSource=admin
-mongoose.connect("mongodb://3.16.96.47:27017/rest-apis", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/rest-apis", { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -43,23 +43,13 @@ app.use("/api/auth", authRoutes);
 // app.use("/api/expense", passportJWT.authenticate(), expenseRoutes);
 app.use("/api/post", passportJWT.authenticate(), postRoutes);
 app.use("/api/exercises", exercisesRoutes);
+app.use("/api/userExercises", userExercisesRoutes);
+app.use("/api/userWorkouts",userWorkoutsRoutes);
 app.use("/api/workouts", workoutsRoutes);
 app.use("/api/friends", friendsRoutes);
 app.use("/api/follow", passportJWT.authenticate(), followRoutes);
 
 app.use(errorHandler);
-
-app.get('*', (req, res) => {
-    res.sendFile( path.join(__dirname, '../docs/index.html' ) );
-})
-
-app.use((error, req, res, next)=>{
-  console.error(error);
-
-    res.status(error.code || 500 );
-    res.send( { msg: error.msg });
-})
-
 
 app.listen(8000, () => {
     
