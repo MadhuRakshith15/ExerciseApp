@@ -1,74 +1,40 @@
 <template>
   <div class="vue-template">
-    <nav
-      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand float-left"
-          href="https://myappr.herokuapp.com/"
-          target="_blank"
-        >
-          Fitness Freak
-        </a>
-        <ul class="nav navbar-nav flex-row float-right">
-          <!-- <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/workouts">Workouts</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link pr-5" to="/exercise">Exercises</router-link>
-          </li> -->
-          <!-- <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/posts">Posts</router-link>
-          </li> -->
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="btn btn-outline-primary mr-3" to="/signup"
-              >Sign up</router-link
-            >
-          </li>
-          <!-- <li class="nav-item" style="">
-            <router-link class="btn btn-outline-info" to="/admin-login">Admin Login</router-link>
-          </li> -->
-        </ul>
-      </div>
-    </nav>
+    <topnavbar />
     <div class="inner-block">
       <div class="vertical-center">
         <form id="signup-form" v-on:submit.prevent="registerClicked">
-          <h3 class="pt-5">Sign Up</h3>
+          <h3 class="pt-5">Add User</h3>
 
           <div class="form-group">
             <label>First Name</label>
-            <!-- <input type="text" class=""/> -->
+
             <input
               type="text"
               class="form-control form-control-lg"
-              placeholder="Your Firstname"
+              placeholder="Firstname"
               required
               v-model="user.firstName"
             />
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <!-- <input type="text" class=""/> -->
+
             <input
               type="text"
               class="form-control form-control-lg"
-              placeholder="Your Lastname"
+              placeholder="Lastname"
               required
               v-model="user.lastName"
             />
           </div>
           <div class="form-group">
             <label>User Name</label>
-            <!-- <input type="text" class=""/> -->
+
             <input
               type="text"
               class="form-control form-control-lg"
-              placeholder="Your username"
+              placeholder="Username"
               required
               v-model="user.userName"
             />
@@ -140,13 +106,8 @@
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg btn-block">
-            Signup
+            Add User
           </button>
-
-          <p class="forgot-password text-right">
-            Already registered
-            <router-link :to="{ name: 'login' }">sign in?</router-link>
-          </p>
         </form>
       </div>
     </div>
@@ -156,7 +117,9 @@
 <script>
 import axios from "axios";
 import router from "../router/index.js";
+import topnavbar from "./topnavbar.vue";
 export default {
+  components: { topnavbar },
   name: "SignUp",
   data() {
     return {
@@ -188,7 +151,7 @@ export default {
   methods: {
     validateFields() {
       if (this.user.firstName.length === 0) {
-        this.error = "FirstName should not be empty";
+        this.error = "Firstname should not be empty";
         return false;
       }
 
@@ -219,8 +182,6 @@ export default {
     },
 
     registerClicked() {
-      console.log(JSON.parse(sessionStorage.getItem("users")));
-
       if (this.validateFields()) {
         axios
           .post("http://localhost:8000/api/auth/signup", {
@@ -235,7 +196,7 @@ export default {
             weight: this.user.weight,
           })
           .then((res) => {
-            router.push("/login");
+            router.push("/manage-users");
             console.log(res);
           })
           .catch((err) => {
@@ -253,11 +214,6 @@ export default {
       userToClear.weight = "";
       userToClear.height = "";
     },
-  },
-  mounted() {
-    if (sessionStorage.isLoggedIn) {
-      this.$router.push("/user-dashboard");
-    }
   },
 };
 </script>

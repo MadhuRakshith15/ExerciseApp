@@ -4,22 +4,27 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: () => import('../App.vue')
-  },
-  {
-    path: '/posts',
-    name: 'posts',
-    component: () => import('../components/Posts.vue')
-  },
+    {
+      path: '/exercise',
+      name: 'exercise',
+      component: () => import('../components/Exercise.vue'),
+      meta: {
+        title: 'Exercise',
+      },
+    },
+    {
+      path: '/user-profile',
+      name: 'user-profile',
+      component: () => import('../components/UserProfile.vue'),
+      meta: {
+        title: 'User-Profile',
+      },
+    },
   {
     path: '/signup',
     name: 'signup',
     component: () => import('../components/Signup.vue')
   },
- 
   {
     path: '/login',
     name: 'login',
@@ -38,20 +43,93 @@ Vue.use(VueRouter)
   {
     path: '/user-dashboard',
     name: 'user-dashboard',
-    // component: () => import('../components/userDashboard.vue')
-    component: () => import('../components/UserProfile.vue')
-    //almost contains home values
+    component: () => import('../components/userDashboard.vue')
   },
+
   {
     path: '/friends',
     name: 'friends',
     component: () => import('../components/Friends.vue')
   },
   {
+    path: '/friends/add',
+    name: 'friendsadd',
+    component: () => import('../components/AddFriend.vue')
+  },
+
+
+
+  {
+    path: '/post',
+    name: 'post',
+    component: () => import('../components/Post.vue')
+    },
+  {
+    path: '/post/add',
+    name: 'addpost',
+    component: () => import('../components/AddPost.vue')
+  },
+
+//admin manage user
+
+  {
     path: '/admin-page',
-    name: 'friends',
+    name: 'admin',
     component: () => import('../components/AdminPage.vue')
   },
+  {
+    path: '/admin-page/manage-users',
+    name: 'manage-users',
+    component: () => import('../components/Manageusers.vue')
+  },
+  {
+    path: '/admin-page/manage-users/add',
+    name: 'adduser',
+    component: () => import('../components/AddUser.vue'),
+    meta: {
+      title: 'Addfriend',
+    },
+  },
+
+
+//manage exercise
+  {
+    path: '/admin-page/manage-exercise',
+    name: 'manage-exercise',
+    component: () => import('../components/ManageExercise.vue')
+  },
+  {
+    path: '/admin-page/manage-exercise/add',
+    name: 'manage-exercise_add',
+    component: () => import('../components/AddExercise.vue')
+    },
+  
+  
+//manage workout
+  {
+    path: '/admin-page/manageworkout',
+    name: 'manage-exercise',
+    component: () => import('../components/Workoutmanage.vue')
+  },
+  {
+    path: '/admin-page/manageworkout/add',
+    name: 'manage-exercise_add',
+    component: () => import('../components/AddWorkout.vue')
+    },
+  
+
+ 
+
+
+
+
+
+
+
+  
+
+
+
   {
     path: '/workouts',
     name: 'workouts',
@@ -60,22 +138,13 @@ Vue.use(VueRouter)
       title: 'Workouts',
     },
   },
+  
+ 
   {
-    path: '/exercise',
-    name: 'exercise ',
-    component: () => import('../components/Exercise.vue'),
-    meta: {
-      title: 'Exercise',
-    },
+    path: '/',
+    name: 'home',
+    component: () => import('../App.vue')
   },
-    {
-    path: '/user-profile',
-    name: 'user-profile',
-    component: () => import('../components/UserProfile.vue'),
-    meta: {
-      title: 'User-Profile',
-    },
-  }
 ]
 
 const router = new VueRouter({
