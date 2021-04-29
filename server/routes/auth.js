@@ -9,4 +9,10 @@ router.post("/login", authController.login);
 router.post("/signup", [isEmail, hasPassword], authController.signup);
 router.get("/me", passportJWT.authenticate(), authController.me);
 
+
+router.get("/showusers",  authController.index);
+
+router.post("/deleteuser", authController.delete);
+router.delete("/:id", authController.delete);
+
 module.exports = router;

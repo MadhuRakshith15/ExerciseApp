@@ -4,11 +4,12 @@ const Schema = mongoose.Schema;
 
 const UserExercisesSchema = new Schema({
         name: { type: String, required: false },
+        
         sets: { type: Number, required: false },
         caloriesBurnt: { type: String, required: false },
-        completed: {type: String, required:false },
-        timePeriod: { type: String, required:false },
-        user: { type: Schema.Types.ObjectId, ref: "user" }
+        workoutStage: { type: String, required: false },
+        period: { type: String, required: false },
+        completed: { type: String, required: false },
 });
 
-module.exports = mongoose.model("userExercises", UserExercisesSchema); 
+module.exports = mongoose.model("userexercises", UserExercisesSchema); 

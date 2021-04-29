@@ -7,7 +7,7 @@ const FriendSchema = new Schema({
     phone: { type: Number, required: true },
     email: { type: String, required: true },
     active: { type: Boolean, default: true },
-    bmi: { type: Number, required: false },
+    bmi: { type: Number, required: false }
 });
 
 module.exports = mongoose.model("friend", FriendSchema);

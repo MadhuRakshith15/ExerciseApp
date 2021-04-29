@@ -15,6 +15,7 @@ friendsController.store
 
 router.patch("/:id", friendsController.update);
 router.delete("/:id", friendsController.delete);
+router.post('/add', friendsController.store);
 
 // router.patch("/:id", hasDescription, employeesController.update);
 // router.delete("/:id", employeesController.delete);

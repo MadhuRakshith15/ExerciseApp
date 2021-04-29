@@ -5,12 +5,15 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
    firstName: { type: String, required: true },
+   
    lastName: { type: String, required: true },
+   userName: { type: String, required: true },
    email: { type: String, required: true },
    password: { type: String, required: true, select: false}, 
    mobileNumber: {type: Number, required:true },
    age: {type: Number, required:true },
    height: {type: Number, required:true },
+   weight: {type: Number, required:true },
 
 // following: [{ type: Schema.Types.ObjectId, ref: "user"}]
 });

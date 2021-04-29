@@ -9,10 +9,7 @@ router.get('/level', workoutsController.indexQuery);
 
 router.get("/:id", workoutsController.show);
 
-router.post('/',
-hasDescription, 
-workoutsController.store
-);
+router.post('/',workoutsController.store);
 
 router.patch("/:id", hasDescription, workoutsController.update);
 router.delete("/:id", workoutsController.delete);

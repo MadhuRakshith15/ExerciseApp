@@ -11,10 +11,7 @@ router.get('/exerciseName', exercisesController.indexQuery);
 router.get("/:id", exercisesController.show);
 
 
-router.post('/',
-hasDescription, 
-exercisesController.store
-);
+router.post('/',exercisesController.store);
 
 router.patch("/:id", hasDescription, exercisesController.update);
 router.delete("/:id", exercisesController.delete);

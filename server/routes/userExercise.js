@@ -1,20 +1,21 @@
 const express = require ('express');
-const userExercisesController = require ("../controllers/userExerciseController");
-const uploadImage = require("../middlewares/multer");
+const userexercisesController = require ("../controllers/userexerciseController");
+
 const { hasDescription } = require("../validations/validators");
 const router = express.Router();
 
-router.get('/', userExercisesController.index);
+router.get('/', userexercisesController.index);
 
-router.get('/userExerciseName', userExercisesController.indexQuery);
+router.get('/exerciseName', userexercisesController.indexQuery);
 
-
-router.post('/',
-userExercisesController.store
-);
+router.get("/:id", userexercisesController.show);
 
 
-// router.patch("/:id", hasDescription, expenseController.update);
-// router.delete("/:id", expenseController.delete);
+router.post('/',userexercisesController.store);
+
+router.patch("/:id", hasDescription, userexercisesController.update);
+router.delete("/:id", userexercisesController.delete);
+
+
 
 module.exports = router;

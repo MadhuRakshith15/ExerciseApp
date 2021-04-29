@@ -37,7 +37,7 @@ exports.indexQuery = async (req, res) => {
 
 
 exports.show = async (req, res, next) => {
-
+   
     try {
         const friends = await Friends.findOne({
             _id: req.params.id
@@ -51,7 +51,8 @@ exports.show = async (req, res, next) => {
 
 
 exports.store = async(req, res, next) => {
-  try {
+    
+    try {
       validationHandler(req);
       let friends = new Friends();
       friends.name = req.body.name;
