@@ -25,7 +25,7 @@
     </nav>
 
     <div class="vertical-center mt-5">
-      <div class="inner-block mt-5">
+      <div class="inner-block mt-5" style="opacity:0.95">
         <form v-on:submit.prevent="loginBtnClicked">
           <h3>Sign In</h3>
 

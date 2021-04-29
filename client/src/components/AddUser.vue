@@ -1,7 +1,9 @@
 <template>
   <div class="vue-template">
-    <topnavbar />
-    <div class="inner-block">
+    <div class="col-md-12">
+      <topnavbar />
+    </div>
+    <div class="inner-block" style="opacity:0.95">
       <div class="vertical-center">
         <form id="signup-form" v-on:submit.prevent="registerClicked">
           <h3 class="pt-5">Add User</h3>

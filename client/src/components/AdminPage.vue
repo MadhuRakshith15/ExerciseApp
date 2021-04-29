@@ -7,7 +7,7 @@
       <br />
       <br />
 
-      <ul class="default-responsive-navlinks">
+      <ul class="default-responsive-navlinks" style="opacity:0.95">
         <h3><center>DashBoard</center></h3>
 
         <li>
@@ -33,20 +33,15 @@
   </div>
 </template>
 
-<!-- 
 <script>
-
-
 export default {
-  components: {
-
-  },
+  components: {},
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
 };
-</script>  -->
+</script>
 
 <style>
 @import "https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap";

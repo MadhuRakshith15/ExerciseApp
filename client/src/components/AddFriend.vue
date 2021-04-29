@@ -3,7 +3,7 @@
     <topnavbar />
 
     <div class="vertical-center mt-5">
-      <div class="inner-block mt-5">
+      <div class="inner-block mt-5" style="opacity:0.95">
         <form v-on:submit.prevent="addBtnClicked">
           <h3>Add Friend</h3>
 
@@ -43,7 +43,7 @@
             <input
               type="boolean"
               class="form-control form-control-lg"
-              placeholder="Active"
+              placeholder="Active(true or false)"
               v-model.trim="friend.active"
             />
           </div>

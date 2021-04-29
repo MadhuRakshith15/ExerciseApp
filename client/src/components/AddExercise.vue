@@ -1,8 +1,11 @@
 <template>
   <div class="vue-template">
     <topnavbar />
-
-    <div class="inner-block">
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="inner-block" style="opacity:0.95">
       <div class="vertical-center">
         <form id="signup-form" v-on:submit.prevent="registerClicked">
           <h3 class="pt-5">Add Exercises</h3>
@@ -76,7 +79,9 @@
 <script>
 import axios from "axios";
 import router from "../router/index.js";
+import topnavbar from "./topnavbar.vue";
 export default {
+  components: { topnavbar },
   name: "AddExercise",
   data() {
     return {

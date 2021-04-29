@@ -21,15 +21,18 @@
           <router-link class="nav-link pr-3" to="/post">Post</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link pr-4" to="/workouts"
-            >Workouts</router-link
+          <router-link class="nav-link pr-3" to="/userexercise"
+            >Exercise</router-link
           >
         </li>
         <li class="nav-item">
-          <router-link class="nav-link pr-4" to="/exercise"
-            >Exercises</router-link
+          <router-link class="nav-link pr-3" to="/userworkout"
+            >Workout</router-link
           >
         </li>
+
+        
+
         <li class="nav-item">
           <router-link class="nav-link pr-4" to="/friends">Friends</router-link>
         </li>
@@ -47,10 +50,11 @@
 </template>
 
 <script>
+
 export default {
   name: "TopNavbar",
   data() {
-    return {};
+    return {  };
   },
   methods: {
     logout() {
@@ -58,6 +62,10 @@ export default {
       sessionStorage.removeItem("isLoggedIn");
       this.$router.push("/");
     },
+    
+  },
+  mounted() {
+    
   },
 };
 </script>

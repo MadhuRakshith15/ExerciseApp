@@ -6,7 +6,7 @@
     <br />
     <br />
 
-    <div class="container emp-profile">
+    <div class="container emp-profile" style="opacity:0.95">
       <form method="post">
         <!-- First Row -->
         <div class="row">
@@ -188,7 +188,7 @@ export default {
   },
   mounted() {
     this.getCurrentUser = JSON.parse(sessionStorage.getItem("user"));
-    console.log(sessionStorage.getItem("user"))
+    console.log(sessionStorage.getItem("user"));
     if (!sessionStorage.isLoggedIn) {
       this.$router.push("/login");
     }

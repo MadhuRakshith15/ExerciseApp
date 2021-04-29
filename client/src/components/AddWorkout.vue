@@ -1,8 +1,14 @@
 <template>
   <div class="vue-template">
-    <topnavbar />
+    <div class="col-md-12">
+      <topnavbar />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
 
-    <div class="inner-block">
+    <div class="inner-block" style="opacity:0.95">
       <div class="vertical-center">
         <form v-on:submit.prevent="addBtnClicked">
           <h3>Add workout</h3>

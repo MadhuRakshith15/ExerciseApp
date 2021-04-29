@@ -2,13 +2,11 @@
   <div class="col-md-12">
     <topnavbar />
     <div class="row">
-      <div class="col-md-3">
-        <Sidebar />
-      </div>
-      <div class="col-md-9">
+      <div class="col-md-12">
         <div class="routerview">
           <router-view />
         </div>
+        <br />
         <br />
         <br />
         <br />
@@ -24,53 +22,48 @@
               <div class="mycss">
                 <table class="table">
                   <thead>
-                    <tr>
+                    <tr style="color:blue">
                       <td>
                         Exercise Name
-                      </td>
-                      <td>
-                        description
                       </td>
                       <td>
                         Sets
                       </td>
                       <td>
-                        CakiruesBurnt
+                        CaloriesBurnt
+                      </td>
+                      <td>
+                        Workout Stage
                       </td>
 
                       <td>
-                        WorkoutStage
+                        Period Time
                       </td>
                       <td>
-                        Delete
+                        Completed
                       </td>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr :key="exercise._id" v-for="exercise in exercises">
-                      <td>{{ exercise.name }}</td>
-                      <td>{{ exercise.description }}</td>
-                      <td>{{ exercise.sets }}</td>
-                      <td>{{ exercise.caloriesBurnt }}</td>
-                      <td>{{ exercise.workoutStage }}</td>
-
-                      <td>
-                        <button
-                          @click.prevent="deleteExercise(exercise._id)"
-                          class="btn btn-danger"
-                        >
-                          Delete
-                        </button>
-                      </td>
+                    <tr
+                      :key="userexercise._id"
+                      v-for="userexercise in userexercises"
+                    >
+                      <td>{{ userexercise.name }}</td>
+                      <td>{{ userexercise.sets }}</td>
+                      <td>{{ userexercise.caloriesBurnt }}</td>
+                      <td>{{ userexercise.workoutStage }}</td>
+                      <td>{{ userexercise.period }}</td>
+                      <td>{{ userexercise.completed }}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <br />
               <div style="textAlign: center">
-                <router-link to="/admin-page/manage-exercise/add">
+                <router-link to="/userexercise/add">
                   <button class="btn btn-primary pull-right">
-                    Add Exercise
+                    Add UserExercise
                   </button>
                 </router-link>
               </div>
@@ -86,42 +79,23 @@
 <script>
 import axios from "axios";
 import topnavbar from "./topnavbar.vue";
-import Sidebar from "./Sidebar.vue";
 
 export default {
   data() {
     return {
-      exercises: [],
+      userexercises: [],
     };
   },
 
-  methods: {
-    deleteExercise(id) {
-      let apiURL = `http://localhost:8000/api/exercises/${id}`;
-      let indexOfArrayItem = this.exercises.findIndex((i) => i._id === id);
-
-      if (window.confirm("Do you really want to delete?")) {
-        axios
-          .delete(apiURL)
-          .then(() => {
-            this.exercises.splice(indexOfArrayItem, 1);
-            console.log("adfafda");
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    },
-  },
+  methods: {},
   components: {
     topnavbar,
-    Sidebar,
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/exercises")
+      .get("http://localhost:8000/api/userexercise")
       .then((response) => {
-        this.exercises = response.data;
+        this.userexercises = response.data;
         console.log("aaaaaaaaaa", response.data);
       })
       .catch((err) => {

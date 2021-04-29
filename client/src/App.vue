@@ -43,7 +43,10 @@
       <div
         class="bg-Img"
         :style="{
-          backgroundImage: 'url(' + require('./assets/RunningSunSet.jpg') + ')',
+          backgroundImage:
+            'url(' +
+            require('./assets/luke-chesser-rCOWMC8qf8A-unsplash.jpg') +
+            ')',
         }"
       >
         <router-view />

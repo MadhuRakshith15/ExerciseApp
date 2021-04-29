@@ -169,7 +169,7 @@ export default {
     submitClicked() {
       console.log("check");
       console.log(JSON.parse(sessionStorage.getItem("exercises")));
-      //  if fields are valid
+
       if (this.validateFields()) {
         //  get exercises in the session
         let exercises = sessionStorage.exercises
@@ -190,12 +190,5 @@ export default {
       exerciseToClear.press = "";
     },
   },
-
-  // computed: {
-  //   getallexcerises: function() {
-  //     console.log(sessionStorage.getItem("exercises"));
-  //     return JSON.parse(sessionStorage.getItem("exercises"));
-  //   },
-  // },
 };
 </script>

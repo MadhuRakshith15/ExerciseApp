@@ -9,38 +9,48 @@
     <div class="container">
       <p v-html="error"></p>
 
-      <div class="portlet box blue" style="width:1000px;">
+      <div class="portlet box blue" style="width:1000px; opacity:0.95">
         <div class="portlet-title">
-          <div class="caption"><i class="fa fa-gift"></i>Friends List</div>
+          <div class="caption"><i class="fa fa-gift"></i>posts List</div>
         </div>
         <div class="portlet-body">
-          <div class="col-md-12 mycss">
-            <div class="row">
-              <div class="col-md-6">
-                <p><center>Image</center></p>
-
-                <div>
-                  <FileUpload />
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <p>User</p>
-                <input type="text" />
-
-                <p>Title</p>
-                <input type="text" />
-                <p>Description</p>
-
-                <textarea rows="4" cols="22" type="text" afdas />
-              </div>
-            </div>
+          <div class="mycss">
+            <table class="table">
+              <thead>
+                <tr>
+                  <td>
+                    <b><center>Image</center></b>
+                  </td>
+                  <td><b> User</b></td>
+                  <td><b> Title</b></td>
+                  <td><b> Description</b></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr :key="post._id" v-for="post in posts">
+                  <td>
+                    <div class="profile-img">
+                      <img
+                        :src="`http://localhost:8000/${post.image}`"
+                        style="height:70px;width:70px"
+                        
+                        alt=""
+                        
+                      />
+                    </div>
+                  </td>
+                  <td>{{ post.user }}</td>
+                  <td>{{ post.title }}</td>
+                  <td>{{ post.description }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <br />
           <div style="textAlign: center">
             <router-link to="/post/add">
               <button class="btn btn-primary pull-right">
-                Add Post
+                Add post
               </button>
             </router-link>
           </div>
@@ -52,26 +62,28 @@
 </template>
 
 <script>
-import FileUpload from "./FileUpload";
+// import FileUpload from "./FileUpload";
 import axios from "axios";
 import topnavbar from "./topnavbar.vue";
 
 export default {
   data() {
     return {
-      friends: [],
+      posts: [],
     };
   },
   methods: {},
   components: {
     topnavbar,
-    FileUpload,
+    // FileUpload,
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/friends")
+      .get("http://localhost:8000/api/post")
       .then((response) => {
-        this.friends = response.data;
+        this.posts = response.data;
+        console.log(this.posts);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);

@@ -1,82 +1,52 @@
 <template>
-  <input type="file" name="fileUpload" @change="onFileChange" />
+  <div class="file">
+    <form @submit.prevent="onSubmit" enctype="multipart/form-data">
+      <div class="fields">
+        <label>Upload File</label><br />
+        <input type="file" ref="file" @change="onSelect" />
+      </div>
+      <div class="fields">
+        <button>Submit</button>
+      </div>
+      <div class="message">
+        <h5>{{ message }}</h5>
+      </div>
+    </form>
+  </div>
 </template>
 
-<script type="text/babel">
+<script>
+import uploadApi from "@/api/files/uploadApi";
+
 export default {
-  name: "fileupload",
-  props: {
-    target: {
-      type: String,
-    },
-    action: {
-      type: String,
-      default: "POST",
-    },
-    alias: {
-      type: String,
-    },
-  },
+  name: "FileUpload",
   data() {
     return {
-      file: null,
+      file: "",
+      message: "",
     };
   },
   methods: {
-    emitter(event, data) {
-      this.$emit(event, data);
-    },
-    uploadProgress(oEvent) {
-      let vm = this;
-      if (oEvent.lengthComputable) {
-        let percentComplete = Math.round((oEvent.loaded * 100) / oEvent.total);
-        vm.emitter("progress", percentComplete);
-      } else {
-        // Unable to compute progress information since the total size is unknown
-        vm.emitter("progress", false);
+    onSelect() {
+      const allowedTypes = ["image/jpeg", "image/jpg", "image/png"];
+      const file = this.$refs.file.files[0];
+      this.file = file;
+      if (!allowedTypes.includes(file.type)) {
+        this.message = "Filetype is wrong!!";
+      }
+      if (file.size > 500000) {
+        this.message = "Too large, max size allowed is 500kb";
       }
     },
-    getCookie: function(name) {
-      var arr,
-        reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-      if ((arr = document.cookie.match(reg))) {
-        return unescape(arr[2]);
-      } else {
-        return null;
-      }
-    },
-    onFileChange(e) {
-      let vm = this;
-
-      if (!this.target || this.target === "") {
-        console.log("Please provide the target url");
-      } else if (!this.action || this.action === "") {
-        console.log("Please provide file upload action ( POST / PUT )");
-      } else if (this.action !== "POST" && this.action !== "PUT") {
-        console.log("File upload component only allows POST and PUT Actions");
-      } else {
-        let files = e.target.files || e.dataTransfer.files;
-        console.log("FILE VALUE:", e.target.files);
-        if (!files.length) {
-          return;
-        }
-
-        this.file = files[0];
-        let formData = new FormData();
-        formData.append(this.alias, this.file);
-        var xhr = new XMLHttpRequest();
-        xhr.open(this.action, this.target);
-
-        xhr.setRequestHeader("X-XSRF-TOKEN", vm.getCookie("XSRF-TOKEN"));
-
-        xhr.onloadstart = function(e) {
-          vm.emitter("start", e);
-        };
-        xhr.onloadend = function(e) {
-          vm.emitter("finish", e);
-        };
-        xhr.upload.onprogress = vm.uploadProgress;
-        xhr.send(formData);
+    async onSubmit() {
+      const formData = new FormData();
+      formData.append("file", this.file);
+      try {
+        await uploadApi.addFile(formData);
+        this.message = "Uploaded!!";
+      } catch (err) {
+        console.log(err);
+        this.message = err.response.data.error;
       }
     },
   },
