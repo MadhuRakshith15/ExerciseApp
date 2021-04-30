@@ -57,7 +57,7 @@ mongoose.connect("mongodb+srv://madhu:test123@cluster0.vfbif.mongodb.net/test", 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/server/public")));
 app.use(passportJWT.initialize());
 
 app.use("/api/auth", authRoutes);
