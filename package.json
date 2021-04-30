@@ -1,11 +1,11 @@
 {
-  "name": "backend",
+  "name": "expensemanagerbackend",
   "version": "1.0.0",
-  "description": "Fitness Manager APIs",
+  "description": "Expense Manager APIs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
-    "start": "node server/index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +27,7 @@
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "swagger-ui-express": "^4.0.6",
     "sync-request": "^6.1.0",
     "uuidv4": "^6.2.7"
   }
