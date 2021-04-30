@@ -34,7 +34,7 @@
             <input
               type="email"
               class="form-control form-control-lg"
-              placeholder="Your Email"
+              placeholder="Email-Id"
               v-model.trim="credentials.username"
               required
             />
@@ -45,7 +45,7 @@
             <input
               type="password"
               class="form-control form-control-lg"
-              placeholder="Your password.."
+              placeholder="password"
               v-model.trim="credentials.password"
               required
             />
