@@ -6,7 +6,7 @@ const uploadImage = require("../middlewares/multer");
 const { hasDescription } = require("../validations/validators");
 const router = express.Router();
 
-const DIR = "./Frontend/uploads/";
+const DIR = "./client/uploads/";
 
 router.get("/", postController.index);
 

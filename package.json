@@ -1,7 +1,7 @@
 {
-  "name": "expensemanagerbackend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Expense Manager APIs",
+  "description": "Fitness Manager APIs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server/index.js",
