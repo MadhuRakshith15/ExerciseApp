@@ -90,7 +90,7 @@ export default {
     addBtnClicked() {
       console.log("post", this.workout);
       axios
-        .post("https://myappr.herokuapp.com:8000/api/userworkouts", {
+        .post("http://localhost:8000/api/userworkouts", {
           // name: this.workout.name,
           // level: this.workout.level,
 
@@ -113,7 +113,7 @@ export default {
   mounted() {
     console.log("workoutid mount");
     axios
-      .get("https://myappr.herokuapp.com:8000/api/workouts")
+      .get("http://localhost:8000/api/workouts")
       .then((response) => {
         var workouts = response.data;
         var id = this.$route.params.Pid;

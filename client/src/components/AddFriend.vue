@@ -126,7 +126,7 @@ export default {
 
     addBtnClicked() {
       axios
-        .post("https://myappr.herokuapp.com:8000/api/friends/add", {
+        .post("http://localhost:8000/api/friends/add", {
           name: this.friend.name,
           email: this.friend.email,
           phone: this.friend.phone,

@@ -6,7 +6,7 @@
       <div class="container">
         <a
           class="navbar-brand float-left"
-          href="https://myappr.herokuapp.com/"
+          href="http://localhost/"
           target="_blank"
         >
           Fitness Freak
@@ -103,7 +103,7 @@ export default {
     loginBtnClicked() {
       if (this.validateFields()) {
         axios
-          .post("https://myappr.herokuapp.com:8000/api/auth/login", {
+          .post("http://localhost:8000/api/auth/login", {
             email: this.credentials.username,
             password: this.credentials.password,
           })
