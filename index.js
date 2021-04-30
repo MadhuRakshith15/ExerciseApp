@@ -5,17 +5,17 @@ const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 const mongoose = require("mongoose");
 const multer = require("multer");
-const passportJWT = require("./middlewares/passportJWT")();
-const errorHandler = require("./middlewares/errorHandler");
-const postRoutes = require("./routes/post");
+const passportJWT = require("./server/middlewares/passportJWT")();
+const errorHandler = require("./server/middlewares/errorHandler");
+const postRoutes = require("./server/routes/post");
 // const expenseRoutes = require("./routes/expense");
-const authRoutes = require("./routes/auth");
-const workoutsRoutes = require("./routes/workout");
-const friendsRoutes = require("./routes/friendsRoute");
-const exercisesRoutes = require("./routes/exercise");
-const followRoutes = require("./routes/follow");
-const userexerciseRoutes = require("./routes/userexercise");
-const userworkoutsRoutes = require("./routes/userworkouts");
+const authRoutes = require("./server/routes/auth");
+const workoutsRoutes = require("./server/routes/workout");
+const friendsRoutes = require("./server/routes/friendsRoute");
+const exercisesRoutes = require("./server/routes/exercise");
+const followRoutes = require("./server/routes/follow");
+const userexerciseRoutes = require("./server/routes/userexercise");
+const userworkoutsRoutes = require("./server/routes/userworkouts");
 
 const app = express();
 
@@ -49,11 +49,11 @@ app.use(express.static(__dirname));
 // app.use(multer({ storage: storageConfig }).single('filedata'));
 
 // -------------end File upload---------
-app.use(express.static('./public'));
+app.use(express.static('./server/public'));
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/rest-apis", {
+mongoose.connect("mongodb+srv://madhu:test123@cluster0.vfbif.mongodb.net/test", {
   useNewUrlParser: true,
-});
+}, {useUnifiedTopology: true });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -69,10 +69,10 @@ app.use("/api/friends", friendsRoutes);
 app.use("/api/userexercise", userexerciseRoutes);
 app.use("/api/userworkouts", userworkoutsRoutes);
 app.use("/api/follow", passportJWT.authenticate(), followRoutes);
-app.use(express.static('./uploads'));
+app.use(express.static('./server/uploads'));
 app.use(errorHandler);
 app.get('*', (req, res) => {
-  res.sendFile( path.join(__dirname, './public/index.html' ) );
+  res.sendFile( path.join(__dirname, './server/public/index.html' ) );
 })
 
 app.listen(8000, () => {

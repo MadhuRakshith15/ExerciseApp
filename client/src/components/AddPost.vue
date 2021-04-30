@@ -81,6 +81,7 @@
 </template>
 
 <script>
+// import uploadApi from "@/api/files/uploadApi";
 import topnavbar from "./topnavbar.vue";
 import axios from "axios";
 import router from "../router/index.js";
@@ -130,11 +131,11 @@ export default {
           formData
         );
         console.log("UPLOAD RESPONSE:", response);
-        const imageFilePath = response.data.file.file;
+        const imageFilePath = response.data.file;
 
         {
           axios
-            .post("http://localhost:8000/api/post", {
+            .post("http://localhost:8000/api/post/add", {
               user: this.post.user,
               title: this.post.title,
               image: imageFilePath,
@@ -151,23 +152,17 @@ export default {
       } catch (err) {
         console.log(err);
       }
-      // try {
-      //   await uploadApi.addFile(formData);
-      //   this.message = "";
-      // } catch (err) {
-      //   console.log(err);
-      //   this.message = err.response.data.error;
-      // }
     },
 
     addBtnClicked() {
       // console.log(this.file.name);
-      this.onSubmit();
+
       axios
         .post("http://localhost:8000/api/post/add", {
           title: this.post.title,
           description: this.post.description,
           user: this.post.user,
+          image: this.post.image
         })
         .then((res) => {
           router.push("/posts");
