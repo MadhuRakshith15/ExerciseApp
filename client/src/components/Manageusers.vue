@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     deleteUser(id) {
-      let apiURL = `http://localhost:8000/api/auth/${id}`;
+      let apiURL = `https://myappr.herokuapp.com/api/auth/${id}`;
       let indexOfArrayItem = this.users.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
@@ -120,7 +120,7 @@ export default {
 
   mounted() {
     axios
-      .get("http://localhost:8000/api/auth/showusers")
+      .get("https://myappr.herokuapp.com/api/auth/showusers")
       .then((response) => {
         this.users = response.data;
       })

@@ -31,7 +31,7 @@
     "vue-simple-upload": "^0.1.6",
     "vue2-google-maps": "^0.8.4"
   },
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://myappr.herokuapp.com/",
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",

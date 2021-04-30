@@ -93,7 +93,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/userexercise")
+      .get("https://myappr.herokuapp.com/api/userexercise")
       .then((response) => {
         this.userexercises = response.data;
         console.log("aaaaaaaaaa", response.data);

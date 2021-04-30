@@ -120,7 +120,7 @@ export default {
   name: "Exercise",
   mounted() {
     axios
-      .get("http://localhost:8000/api/exercises")
+      .get("https://myappr.herokuapp.com/api/exercises")
       .then((res) => {
         console.log(res);
         return res.data;

@@ -67,7 +67,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/friends")
+      .get("https://myappr.herokuapp.com/api/friends")
       .then((response) => {
         this.friends = response.data;
       })
