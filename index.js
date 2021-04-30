@@ -17,7 +17,7 @@ const followRoutes = require("./routes/follow");
 const userexerciseRoutes = require("./routes/userexercise");
 const userworkoutsRoutes = require("./routes/userworkouts");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 const app = express();
 
