@@ -17,6 +17,8 @@ const followRoutes = require("./routes/follow");
 const userexerciseRoutes = require("./routes/userexercise");
 const userworkoutsRoutes = require("./routes/userworkouts");
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 app.use(cors());
@@ -76,10 +78,8 @@ app.get('*', (req, res) => {
 })
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
+
+
 // app.listen(port);
 app.listen(port, () => {
   console.log(`       
