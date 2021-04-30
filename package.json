@@ -1,11 +1,11 @@
 {
-  "name": "expensemanagerbackend",
+  "name": "fitnessbackend",
   "version": "1.0.0",
-  "description": "Expense Manager APIs",
+  "description": "Fitness Manager APIs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "(cd client && npm install) && node index.js"
   },
   "author": "",
   "license": "ISC",
