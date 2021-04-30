@@ -5,7 +5,7 @@ const axios = require("axios");
 export default {
   async addFile(formData) {
     axios
-      .post("http://localhost:8000/upload", formData, {
+      .post("https://myappr.herokuapp.com:8000/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Accept: "application/json",
@@ -14,3 +14,4 @@ export default {
       .then((res) => console.log(res));
   },
 };
+

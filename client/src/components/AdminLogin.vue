@@ -57,7 +57,7 @@ export default {
     }
 
     axios
-      .get("http://localhost:8000/api/auth/showusers")
+      .get("https://myappr.herokuapp.com:8000/api/auth/showusers")
       .then((response) => {
         this.admin = response.data;
         // console.log(this.admin);
@@ -82,7 +82,7 @@ export default {
     loginBtnClicked() {
       if (this.validateFields()) {
         axios
-          .post("http://localhost:8000/api/auth/login", {
+          .post("https://myappr.herokuapp.com:8000/api/auth/login", {
             email: this.credentials.username,
             password: this.credentials.password,
           })

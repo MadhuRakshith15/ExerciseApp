@@ -97,7 +97,7 @@ export default {
 
   methods: {
     deleteExercise(id) {
-      let apiURL = `http://localhost:8000/api/exercises/${id}`;
+      let apiURL = `https://myappr.herokuapp.com:8000/api/exercises/${id}`;
       let indexOfArrayItem = this.exercises.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
@@ -119,7 +119,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/exercises")
+      .get("https://myappr.herokuapp.com:8000/api/exercises")
       .then((response) => {
         this.exercises = response.data;
         console.log("aaaaaaaaaa", response.data);

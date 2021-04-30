@@ -103,7 +103,7 @@ export default {
     loginBtnClicked() {
       if (this.validateFields()) {
         axios
-          .post("http://localhost:8000/api/auth/login", {
+          .post("https://myappr.herokuapp.com:8000/api/auth/login", {
             email: this.credentials.username,
             password: this.credentials.password,
           })

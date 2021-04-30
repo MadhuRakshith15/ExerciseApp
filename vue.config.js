@@ -1,6 +1,6 @@
 // vue.config.js
 module.exports = {
   devServer: {
-    proxy: 'http://localhost:8000/api',
+    proxy: 'https://myappr.herokuapp.com:8000/api',
   }
 }

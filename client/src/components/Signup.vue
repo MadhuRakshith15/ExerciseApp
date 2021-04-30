@@ -223,7 +223,7 @@ export default {
 
       if (this.validateFields()) {
         axios
-          .post("http://localhost:8000/api/auth/signup", {
+          .post("https://myappr.herokuapp.com:8000/api/auth/signup", {
             userName: this.user.userName,
             firstName: this.user.firstName,
             lastName: this.user.lastName,

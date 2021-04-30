@@ -138,7 +138,7 @@ export default {
     registerClicked() {
       if (this.validateFields()) {
         axios
-          .post("http://localhost:8000/api/exercises", {
+          .post("https://myappr.herokuapp.com:8000/api/exercises", {
             name: this.exercise.name,
             description: this.exercise.description,
             sets: this.exercise.sets,

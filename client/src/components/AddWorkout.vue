@@ -102,7 +102,7 @@ export default {
 
     addBtnClicked() {
       axios
-        .post("http://localhost:8000/api/workouts", {
+        .post("https://myappr.herokuapp.com:8000/api/workouts", {
           name: this.workout.name,
           description: this.workout.description,
           level: this.workout.level,

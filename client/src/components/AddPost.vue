@@ -127,7 +127,7 @@ export default {
       // formData.append("user", this.post.user);
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/post/upload",
+          "https://myappr.herokuapp.com:8000/api/post/upload",
           formData
         );
         console.log("UPLOAD RESPONSE:", response);
@@ -135,7 +135,7 @@ export default {
 
         {
           axios
-            .post("http://localhost:8000/api/post/add", {
+            .post("https://myappr.herokuapp.com:8000/api/post/add", {
               user: this.post.user,
               title: this.post.title,
               image: imageFilePath,
@@ -158,7 +158,7 @@ export default {
       // console.log(this.file.name);
 
       axios
-        .post("http://localhost:8000/api/post/add", {
+        .post("https://myappr.herokuapp.com:8000/api/post/add", {
           title: this.post.title,
           description: this.post.description,
           user: this.post.user,

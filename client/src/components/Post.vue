@@ -31,7 +31,7 @@
                   <td>
                     <div class="profile-img">
                       <img
-                        :src="`http://localhost:8000/${post.image}`"
+                        :src="`https://myappr.herokuapp.com:8000/${post.image}`"
                         style="height:70px;width:70px"
                         
                         alt=""
@@ -79,7 +79,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8000/api/post")
+      .get("https://myappr.herokuapp.com:8000/api/post")
       .then((response) => {
         this.posts = response.data;
         console.log(this.posts);
