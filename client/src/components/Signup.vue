@@ -6,21 +6,13 @@
       <div class="container">
         <a
           class="navbar-brand float-left"
-          href="http://localhost/"
+          href="https://myappr.herokuapp.com/"
           target="_blank"
         >
           Fitness Freak
         </a>
         <ul class="nav navbar-nav flex-row float-right">
-          <!-- <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/workouts">Workouts</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link pr-5" to="/exercise">Exercises</router-link>
-          </li> -->
-          <!-- <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/posts">Posts</router-link>
-          </li> -->
+
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
           </li>
@@ -29,14 +21,12 @@
               >Sign up</router-link
             >
           </li>
-          <!-- <li class="nav-item" style="">
-            <router-link class="btn btn-outline-info" to="/admin-login">Admin Login</router-link>
-          </li> -->
+
         </ul>
       </div>
     </nav>
     <div class="inner-block">
-      <div class="vertical-center">
+      <div class="vertical-center" style="overflow: scroll;">
         <form id="signup-form" v-on:submit.prevent="registerClicked">
           <h3 class="pt-5">Sign Up</h3>
 
@@ -96,7 +86,7 @@
             />
           </div>
           <div class="form-group">
-            <label>mobileNumber</label>
+            <label>Phone Number</label>
             <input
               type="number"
               class="form-control form-control-lg"
@@ -124,7 +114,7 @@
           </div>
 
           <div class="form-group">
-            <label>Height(lbs)</label>
+            <label>Height"</label>
             <input
               type="number"
               class="form-control form-control-lg"

@@ -6,7 +6,7 @@
       <div class="container">
         <a
           class="navbar-brand float-left"
-          href="http://localhost/"
+          href="https://myappr.herokuapp.com/"
           target="_blank"
         >
           Fitness Freak
